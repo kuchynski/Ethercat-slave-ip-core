@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document>
+<!--The data in this file is primarily intended for consumption by Xilinx tools.
+The structure and the elements are likely to change over the next few releases.
+This means code written to parse this file will need to be revisited each subsequent release.-->
+<application name="pa" timeStamp="Thu Dec  7 11:05:38 2017">
+<section name="Project Information" visible="false">
+<property name="ProjectID" value="eea4184dc00e460f997d3d2ac482256b" type="ProjectID"/>
+<property name="ProjectIteration" value="2" type="ProjectIteration"/>
+</section>
+<section name="PlanAhead Usage" visible="true">
+<item name="Project Data">
+<property name="SrcSetCount" value="1" type="SrcSetCount"/>
+<property name="ConstraintSetCount" value="1" type="ConstraintSetCount"/>
+<property name="DesignMode" value="RTL" type="DesignMode"/>
+<property name="SynthesisStrategy" value="Vivado Synthesis Defaults" type="SynthesisStrategy"/>
+<property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
+</item>
+<item name="Java Command Handlers">
+<property name="AddBusInterfaceHandler" value="5" type="JavaHandler"/>
+<property name="AddSources" value="8" type="JavaHandler"/>
+<property name="AutoInferInterfaceHandler" value="4" type="JavaHandler"/>
+<property name="CloseProject" value="7" type="JavaHandler"/>
+<property name="CoreView" value="1" type="JavaHandler"/>
+<property name="EditConstraintSets" value="1" type="JavaHandler"/>
+<property name="EditDelete" value="11" type="JavaHandler"/>
+<property name="EditProperties" value="1" type="JavaHandler"/>
+<property name="EditRedo" value="305" type="JavaHandler"/>
+<property name="EditUndo" value="475" type="JavaHandler"/>
+<property name="FilePrintCmdHandler" value="1" type="JavaHandler"/>
+<property name="IPPackagerHandler" value="103" type="JavaHandler"/>
+<property name="ImportPortsHandler" value="1" type="JavaHandler"/>
+<property name="NewExportHardware" value="1" type="JavaHandler"/>
+<property name="OpenFile" value="3" type="JavaHandler"/>
+<property name="OpenProject" value="10" type="JavaHandler"/>
+<property name="ProjectSettingsCmdHandler" value="6" type="JavaHandler"/>
+<property name="RunBitgen" value="1" type="JavaHandler"/>
+<property name="RunSynthesis" value="1" type="JavaHandler"/>
+<property name="SaveFileProxyHandler" value="40" type="JavaHandler"/>
+<property name="ShowView" value="3" type="JavaHandler"/>
+<property name="SimulationRun" value="1" type="JavaHandler"/>
+<property name="ToolsSettings" value="3" type="JavaHandler"/>
+<property name="UnselectAllCmdHandler" value="1" type="JavaHandler"/>
+<property name="ViewTaskRTLAnalysis" value="1" type="JavaHandler"/>
+</item>
+<item name="Gui Resources Info">
+<property name="AbstractCombinedPanel_ADD_ELEMENT" value="1" type="GuiResourceData"/>
+<property name="AbstractCombinedPanel_REMOVE_SELECTED_ELEMENTS" value="1" type="GuiResourceData"/>
+<property name="AddSrcWizard_SPECIFY_HDL_NETLIST_BLOCK_DESIGN" value="1" type="GuiResourceData"/>
+<property name="AddSrcWizard_SPECIFY_OR_CREATE_CONSTRAINT_FILES" value="1" type="GuiResourceData"/>
+<property name="BaseDialog_CANCEL" value="14" type="GuiResourceData"/>
+<property name="BaseDialog_OK" value="47" type="GuiResourceData"/>
+<property name="BaseDialog_YES" value="1" type="GuiResourceData"/>
+<property name="BusParameterFacetTable_ADD_RECOMMENDED_PARAMETER" value="4" type="GuiResourceData"/>
+<property name="BusParameterFacetTable_BUS_PARAMETER_FACET_TABLE" value="14" type="GuiResourceData"/>
+<property name="BusParameterFacetTable_NAME" value="1" type="GuiResourceData"/>
+<property name="CmdMsgDialog_MESSAGES" value="3" type="GuiResourceData"/>
+<property name="CmdMsgDialog_OK" value="1" type="GuiResourceData"/>
+<property name="CmdMsgDialog_OPEN_MESSAGES_VIEW" value="1" type="GuiResourceData"/>
+<property name="CreateSrcFileDialog_FILE_NAME" value="1" type="GuiResourceData"/>
+<property name="CreateSrcFileDialog_FILE_TYPE" value="2" type="GuiResourceData"/>
+<property name="DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS" value="4" type="GuiResourceData"/>
+<property name="EditInterfaceDialog_TABBED_PANE" value="18" type="GuiResourceData"/>
+<property name="EditParameterDialog_DEFAULT_VALUE" value="4" type="GuiResourceData"/>
+<property name="EditParameterDialog_VISIBLE_IN_CUSTOMIZATION_GUI" value="2" type="GuiResourceData"/>
+<property name="ExpRunMenu_LAUNCH_STEP" value="5" type="GuiResourceData"/>
+<property name="ExpRunTreePanel_EXP_RUN_TREE_TABLE" value="16" type="GuiResourceData"/>
+<property name="FileGroupFacetTable_FILE_GROUP_FACET_TABLE" value="3" type="GuiResourceData"/>
+<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="460" type="GuiResourceData"/>
+<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="34" type="GuiResourceData"/>
+<property name="HCodeEditor_CLOSE" value="4" type="GuiResourceData"/>
+<property name="HCodeEditor_SEARCH_TEXT_COMBO_BOX" value="115" type="GuiResourceData"/>
+<property name="InterfaceConfigurationPanel_NAME" value="4" type="GuiResourceData"/>
+<property name="InterfaceDefinitionChooser_INTERFACE_DEFINITION_CHOOSER" value="1" type="GuiResourceData"/>
+<property name="InterfaceDefinitionTreeTable_INTERFACES_TREE_TABLE" value="9" type="GuiResourceData"/>
+<property name="InterfacePortMappingPanel_INTERFACES_LOGICAL_PORTS" value="27" type="GuiResourceData"/>
+<property name="InterfacePortMappingPanel_IPS_PHYSICAL_PORTS" value="23" type="GuiResourceData"/>
+<property name="InterfacePortMappingPanel_MAP_PORTS" value="21" type="GuiResourceData"/>
+<property name="InterfacePortMappingPanel_TABLE" value="7" type="GuiResourceData"/>
+<property name="LogMonitor_MONITOR" value="2" type="GuiResourceData"/>
+<property name="MainMenuMgr_EDIT" value="4" type="GuiResourceData"/>
+<property name="MainMenuMgr_EXPORT" value="1" type="GuiResourceData"/>
+<property name="MainMenuMgr_FILE" value="74" type="GuiResourceData"/>
+<property name="MainMenuMgr_FLOW" value="4" type="GuiResourceData"/>
+<property name="MainMenuMgr_OPEN_RECENT_FILE" value="5" type="GuiResourceData"/>
+<property name="MainMenuMgr_OPEN_RECENT_PROJECT" value="71" type="GuiResourceData"/>
+<property name="MainMenuMgr_REPORT" value="1" type="GuiResourceData"/>
+<property name="MainMenuMgr_TOOLS" value="2" type="GuiResourceData"/>
+<property name="MessageBanner_CHANGES_DETECTED_IN_IP_THAT_REQUIRE" value="16" type="GuiResourceData"/>
+<property name="MessageBanner_CHANGES_DETECTED_IN_VIVADO_PROJECT_THAT" value="34" type="GuiResourceData"/>
+<property name="MsgTreePanel_MESSAGE_VIEW_TREE" value="25" type="GuiResourceData"/>
+<property name="PACommandNames_ADD_SOURCES" value="7" type="GuiResourceData"/>
+<property name="PACommandNames_AUTO_UPDATE_HIER" value="25" type="GuiResourceData"/>
+<property name="PACommandNames_CLOSE_PROJECT" value="6" type="GuiResourceData"/>
+<property name="PACommandNames_EDIT_CONSTRAINT_SETS" value="1" type="GuiResourceData"/>
+<property name="PACommandNames_LOG_WINDOW" value="1" type="GuiResourceData"/>
+<property name="PACommandNames_OPEN_FILE" value="3" type="GuiResourceData"/>
+<property name="PACommandNames_OPEN_PROJECT" value="10" type="GuiResourceData"/>
+<property name="PACommandNames_PACKAGER_ADD_BUS_INTERFACE" value="2" type="GuiResourceData"/>
+<property name="PACommandNames_RESET_RUNS" value="2" type="GuiResourceData"/>
+<property name="PACommandNames_RUN_BITGEN" value="1" type="GuiResourceData"/>
+<property name="PACommandNames_SIMULATION_RESET" value="1" type="GuiResourceData"/>
+<property name="PACommandNames_SIMULATION_RUN" value="2" type="GuiResourceData"/>
+<property name="PACommandNames_SIMULATION_RUN_BEHAVIORAL" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, ethercat_slave_v1_0 (ethercat_slave_v1_0.v" value="10" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Project Manager, Package IP], 5, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.GettingStartedView_RECENT_PROJECTS, D:/work/vivado/ip_fm/ethercat_slave/ethercat_slave_v1_0_project/ethercat_slave_v1_0_project.xpr, 0" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MessageBanner_CHANGES_DETECTED_IN_VIVADO_PROJECT_THAT, Merge changes from Customization Parameters Wizard" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, Customization Parameters, 3" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, Review and Package, 7" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.ReviewContentPanel_RE_PACKAGE_IP, Re-Package IP" value="1" type="GuiResourceData"/>
+<property name="PAViews_CODE" value="31" type="GuiResourceData"/>
+<property name="PAViews_PACKAGE_IP" value="5" type="GuiResourceData"/>
+<property name="PAViews_PROJECT_SUMMARY" value="1" type="GuiResourceData"/>
+<property name="PackagerStepContentPanel_MESSAGES" value="3" type="GuiResourceData"/>
+<property name="PackagerStepsPanel_PACKAGER_STEPS_LIST" value="99" type="GuiResourceData"/>
+<property name="ParameterFacetTable_ADD_PARAMETER" value="2" type="GuiResourceData"/>
+<property name="ParameterFacetTable_EDIT_PARAMETER" value="2" type="GuiResourceData"/>
+<property name="ParameterFacetTable_NAME" value="2" type="GuiResourceData"/>
+<property name="ParameterFacetTable_PARAMETER_FACET_TABLE" value="23" type="GuiResourceData"/>
+<property name="PortAndInterfaceFacetTable_EDIT_INTERFACE" value="13" type="GuiResourceData"/>
+<property name="PortAndInterfaceFacetTable_PORT_AND_INTERFACE_FACET_TABLE" value="389" type="GuiResourceData"/>
+<property name="PortAndInterfaceFacetTable_REMOVE_INTERFACE" value="19" type="GuiResourceData"/>
+<property name="PortAndInterfaceFacetTable_REMOVE_PORT" value="2" type="GuiResourceData"/>
+<property name="RDICommands_COPY" value="1" type="GuiResourceData"/>
+<property name="RDICommands_CUSTOM_COMMANDS" value="1" type="GuiResourceData"/>
+<property name="RDICommands_DELETE" value="10" type="GuiResourceData"/>
+<property name="RDICommands_REDO" value="122" type="GuiResourceData"/>
+<property name="RDICommands_SETTINGS" value="1" type="GuiResourceData"/>
+<property name="RDICommands_UNDO" value="153" type="GuiResourceData"/>
+<property name="RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, IRQ_DATA" value="2" type="GuiResourceData"/>
+<property name="RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, IRQ_MASK" value="1" type="GuiResourceData"/>
+<property name="RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, SLV_REG2" value="1" type="GuiResourceData"/>
+<property name="RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, bram_irq_data_write" value="2" type="GuiResourceData"/>
+<property name="RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, mask" value="1" type="GuiResourceData"/>
+<property name="RemoveSourcesDialog_ALSO_DELETE" value="1" type="GuiResourceData"/>
+<property name="ReviewContentPanel_RE_PACKAGE_IP" value="33" type="GuiResourceData"/>
+<property name="SaveProjectUtils_CANCEL" value="1" type="GuiResourceData"/>
+<property name="SelectTopModuleDialog_SELECT_TOP_MODULE" value="2" type="GuiResourceData"/>
+<property name="SettingsDialog_OPTIONS_TREE" value="3" type="GuiResourceData"/>
+<property name="SettingsDialog_PROJECT_TREE" value="2" type="GuiResourceData"/>
+<property name="SettingsProjectIPRepositoryPage_REPOSITORY_CHOOSER" value="1" type="GuiResourceData"/>
+<property name="SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT" value="6" type="GuiResourceData"/>
+<property name="SrcChooserPanel_ADD_OR_CREATE_SOURCE_FILE" value="6" type="GuiResourceData"/>
+<property name="SrcChooserPanel_CREATE_FILE" value="2" type="GuiResourceData"/>
+<property name="SrcFilePropPanels_SIMULATION" value="6" type="GuiResourceData"/>
+<property name="SrcFilePropPanels_TYPE" value="3" type="GuiResourceData"/>
+<property name="SrcFileTypeComboBox_SOURCE_FILE_TYPE" value="2" type="GuiResourceData"/>
+<property name="SrcMenu_IP_HIERARCHY" value="20" type="GuiResourceData"/>
+<property name="SyntheticaGettingStartedView_RECENT_PROJECTS" value="19" type="GuiResourceData"/>
+<property name="TabOptions_USE_TAB_CHARACTER" value="3" type="GuiResourceData"/>
+<property name="TopModuleDialog_SELECT_TOP_MODULE_FOR_YOUR_SIMULATION" value="1" type="GuiResourceData"/>
+<property name="TouchpointSurveyDialog_REMIND_ME_LATER" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 1043, 354" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 111, 502" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 115, 494" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 124, 482" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 124, 482, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 134, 693" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 134, 693, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 147, 575" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 147, 575, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 148, 485" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 148, 485, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 152, 499" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 152, 499, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 153, 277" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 153, 277, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 159, 316" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 159, 569" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 159, 569, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 166, 398" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 166, 398, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 170, 482, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 173, 485" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 209, 488" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 216, 517" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 237, 622" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 237, 622, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 240, 498" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 240, 498, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 265, 504" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 286, 186" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 308, 111" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 308, 111, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 313, 515" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 317, 178" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 317, 178, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 340, 177" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 340, 177, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 340, 178" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 340, 178, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 346, 332" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 346, 332, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 36, 311" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 36, 311, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 380, 332, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 380, 482" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 380, 482, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 381, 493" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 381, 493, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 382, 332" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 395, 482" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 395, 482, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 411, 307" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 414, 338" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 418, 327" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 429, 256" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 569, 336" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 571, 331" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 571, 331, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="cpu_ethercat_slave.v, 83, 480" value="1" type="GuiResourceData"/>
+<property name="ethercat_slave_S00_AXI.v, 307, 515" value="1" type="GuiResourceData"/>
+<property name="ethercat_slave_S00_AXI.v, 307, 515, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="ethercat_slave_S00_AXI.v, 320, 519" value="1" type="GuiResourceData"/>
+<property name="ethercat_slave_S00_AXI.v, 320, 519, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="ethercat_slave_S00_AXI.v, 459, 252" value="1" type="GuiResourceData"/>
+<property name="ethercat_slave_v1_0.v, 149, 501" value="1" type="GuiResourceData"/>
+<property name="ethercat_slave_v1_0.v, 149, 501, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="ethercat_slave_v1_0.v, 97, 620" value="1" type="GuiResourceData"/>
+<property name="ethercat_slave_v1_0.v, 97, 620, false, false, false, false, true" value="1" type="GuiResourceData"/>
+</item>
+<item name="Other">
+<property name="GuiMode" value="60" type="GuiMode"/>
+<property name="BatchMode" value="0" type="BatchMode"/>
+<property name="TclMode" value="40" type="TclMode"/>
+</item>
+</section>
+</application>
+</document>

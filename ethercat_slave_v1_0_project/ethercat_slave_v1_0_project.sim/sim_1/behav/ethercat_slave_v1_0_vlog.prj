@@ -1,0 +1,8 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  "../../../ethercat_slave_v1_0_project.srcs/sim_1/new/rty.sv"
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

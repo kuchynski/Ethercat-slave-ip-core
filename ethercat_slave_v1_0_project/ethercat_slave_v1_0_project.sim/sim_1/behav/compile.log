@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/work/vivado/ip_fm/ethercat_slave_v1/ethercat_slave_v1_0_project/ethercat_slave_v1_0_project.srcs/sim_1/new/rty.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rty
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/work/vivado/ip_fm/ethercat_slave_v1/ethercat_slave_v1_0_project/ethercat_slave_v1_0_project.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
