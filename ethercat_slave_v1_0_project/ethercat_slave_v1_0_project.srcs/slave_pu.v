@@ -9,7 +9,7 @@ module slave_pu(
 	input [3:0] rx_data,
 	output reg tx_en,
 	output reg[3:0] tx_data,
-	
+
 	input[15:0] fp_address,
 	input[31:0] fmmu0_address,
 	input[31:0] fmmu1_address,
@@ -44,7 +44,7 @@ module slave_pu(
 	reg[31:0] data_crc_rx_real;
 	wire[31:0] data_crc_rx_out;
 	reg crc_rx_ok, data_crc_rx_valid, data_crc_tx_valid;
-	
+
 	reg[11:0] datagram_begin_index, datagram_begin_index_fix, datagram_wkc_index;
 	reg[7:0] datagram_cmd, datagram_cmd_fix;
 	reg[7:0] datagram_idx;
@@ -78,7 +78,7 @@ module slave_pu(
 			if(st_rx == (address_sm_ethercat +  1)) datagram_cmd[7:4] <= rx_data;
 			if(st_rx == (address_sm_ethercat +  2)) datagram_idx[3:0] <= rx_data;
 			if(st_rx == (address_sm_ethercat +  3)) datagram_idx[7:4] <= rx_data;
-            
+
 			if(st_rx == (address_sm_ethercat +  4)) datagram_address[3:0] <= rx_data;
 			if(st_rx == (address_sm_ethercat +  5)) datagram_address[7:4] <= rx_data;
 			if(st_rx == (address_sm_ethercat +  6)) datagram_address[11:8] <= rx_data;
@@ -136,17 +136,25 @@ module slave_pu(
 			else	
 				data_crc_rx_valid <= st_rx[0];
 				
-			if(st_rx_end_of_frame == 0) data_crc_rx_real[3:0] <= rx_data;
-       		if(st_rx_end_of_frame == 1) data_crc_rx_real[7:4] <= rx_data;
-       		if(st_rx_end_of_frame == 2) data_crc_rx_real[11:8] <= rx_data;
-       		if(st_rx_end_of_frame == 3) data_crc_rx_real[15:12] <= rx_data;
-       		if(st_rx_end_of_frame == 4) data_crc_rx_real[19:16] <= rx_data;
-       		if(st_rx_end_of_frame == 5) data_crc_rx_real[23:20] <= rx_data;
-       		if(st_rx_end_of_frame == 6) data_crc_rx_real[27:24] <= rx_data;
-       		if(st_rx_end_of_frame == 7) data_crc_rx_real[31:28] <= rx_data;
+			if(st_rx_end_of_frame == 0)
+				data_crc_rx_real[3:0] <= rx_data;
+			if(st_rx_end_of_frame == 1)
+				data_crc_rx_real[7:4] <= rx_data;
+			if(st_rx_end_of_frame == 2)
+				data_crc_rx_real[11:8] <= rx_data;
+			if(st_rx_end_of_frame == 3)
+				data_crc_rx_real[15:12] <= rx_data;
+			if(st_rx_end_of_frame == 4)
+				data_crc_rx_real[19:16] <= rx_data;
+			if(st_rx_end_of_frame == 5)
+				data_crc_rx_real[23:20] <= rx_data;
+			if(st_rx_end_of_frame == 6)
+				data_crc_rx_real[27:24] <= rx_data;
+			if(st_rx_end_of_frame == 7)
+				data_crc_rx_real[31:28] <= rx_data;
 				
 		end else begin
-		    if(st_rx) begin
+			if(st_rx) begin
 				st_frame <= st_rx;
 				crc_rx_ok <= (data_crc_rx_real == data_crc_rx_out)? 1 : 0;                    
 			end
@@ -164,12 +172,12 @@ module slave_pu(
 			datagram_begin_index_fix <= 100;
 		end
 	end
-	
+
 	reg[3:0] work0_state, work1_state;
 	wire[15:0] datagram_wkc_new = datagram_wkc + datagram_wkc_added;
 	reg[7:0] datagram_data_new;
 	reg[1:0] enable_new_data;
-    
+
 	always@(posedge clk_25) begin
 		if(!rst_n)    begin
 			work1_state <= 0;
@@ -260,7 +268,7 @@ module slave_pu(
 			endcase
 		end
 	end
-	
+
 	wire[4:0] tx_data_new =	(st_tx == datagram_wkc_index + 0)? {1'h1, datagram_wkc_new[3:0]} :
 							(st_tx == datagram_wkc_index + 1)? {1'h1, datagram_wkc_new[7:4]} :
 							(st_tx == datagram_wkc_index + 2)? {1'h1, datagram_wkc_new[11:8]} :
@@ -300,11 +308,11 @@ module slave_pu(
 				1:	begin
 					st_tx <= st_tx + 1;
 					if(st_tx >= address_sm_ethernet) begin
-    					data_crc_tx_valid <= 0;
-	           			tx_end_of_frame <= 1;
-	           		end else if(st_tx > 15)
+						data_crc_tx_valid <= 0;
+						tx_end_of_frame <= 1;
+					end else if(st_tx > 15)
 						data_crc_tx_valid <= !st_tx[0]; 
-	           									
+
 					st_tx_end_of_frame <= (tx_end_of_frame)? st_tx_end_of_frame + 1 : 0;
 					if((st_tx >= st_frame) && !en_rx) begin
 						tx_en <= 0;
@@ -316,7 +324,7 @@ module slave_pu(
 					end
 				end
 			endcase
-		end		
+		end
 	end
 
 	assign tx_data_crc =(st_tx_end_of_frame == 0)? data_crc_tx_out[3:0] : 
@@ -333,7 +341,7 @@ module slave_pu(
 		.init(!en_rx),
 		.en(data_crc_rx_valid),
 		.crc_out(data_crc_rx_out));
-        
+
 	crc_pu crc_tx(
 		.clk(clk_25),
 		.d({tx_data_in_prepare, tx_data}),

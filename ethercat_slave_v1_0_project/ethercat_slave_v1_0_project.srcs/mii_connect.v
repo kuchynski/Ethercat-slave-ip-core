@@ -35,7 +35,7 @@ module mii_connect(
 				st_rx_end <= st_rx;
 		end
 	end
-	
+
 	always@(negedge tx_clk) begin
 		if(rst)	begin
 			tx_state <= 0;
@@ -56,7 +56,7 @@ module mii_connect(
 					end
 				2:	begin
 						if(!en) 
-							second_state <= 1;						
+							second_state <= 1;
 						if(second_state && (st_rx_end == st_tx)) begin
 							tx_en <= 0;
 							tx_data <= 0;
@@ -65,13 +65,13 @@ module mii_connect(
 							st_tx <= st_tx + 1;
 							tx_en <= 1;
 							case(st_tx)
-								0: tx_data <= data0; 
+								0: tx_data <= data0;
 								1: tx_data <= data1;
 								2: tx_data <= data2;
-								3: tx_data <= data3; 
+								3: tx_data <= data3;
 								4: tx_data <= data4;
 								5: tx_data <= data5;
-								6: tx_data <= data6; 
+								6: tx_data <= data6;
 								default: tx_data <= data7;
 							endcase		
 						end

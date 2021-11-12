@@ -221,22 +221,22 @@ module cpu_ethercat_slave #(
 			for(i = 0; i < NUMBER_MUTEX; i = i+1)
 				mutex[i] <= 3;
 		end else begin
-            for(i = 0; i < NUMBER_MUTEX; i = i+1)
-                if(mutex[i] == 3)
-                    mutex[i] = (mutex_set[i][0])? 0 : (mutex_set[i][1])? 1 : (mutex_set[i][2])? 2 : mutex[i];
-                else if((!mutex_set[i][0] && mutex[i]==0) || (!mutex_set[i][1] && mutex[i]==1) || (!mutex_set[i][2] && mutex[i]==2))
-                    mutex[i] = 3;
-        end
-    end*/
+			for(i = 0; i < NUMBER_MUTEX; i = i+1)
+				if(mutex[i] == 3)
+					mutex[i] = (mutex_set[i][0])? 0 : (mutex_set[i][1])? 1 : (mutex_set[i][2])? 2 : mutex[i];
+				else if((!mutex_set[i][0] && mutex[i]==0) || (!mutex_set[i][1] && mutex[i]==1) || (!mutex_set[i][2] && mutex[i]==2))
+					mutex[i] = 3;
+		end
+	end*/
 
-    // MDIO -------------------  MDIO -------------------  MDIO -------------------  MDIO -------------------  MDIO -------------------
+	// MDIO -------------------  MDIO -------------------  MDIO -------------------  MDIO -------------------  MDIO -------------------
 
-    reg[31:0] st_rst2; 
-    assign MII_MDC = 0;
-    assign MII_MDIO = 1'hZ;
-    
-    assign MII_RST = st_rst2[30];//st_rst[9];
+	reg[31:0] st_rst2; 
+	assign MII_MDC = 0;
+	assign MII_MDIO = 1'hZ;
+
+	assign MII_RST = st_rst2[30];//st_rst[9];
 	always@(posedge clk_25) begin
-        st_rst2 <= (!st_rst2[30])? st_rst2 + 1: st_rst2;
-    end
+		st_rst2 <= (!st_rst2[30])? st_rst2 + 1: st_rst2;
+	end
 endmodule

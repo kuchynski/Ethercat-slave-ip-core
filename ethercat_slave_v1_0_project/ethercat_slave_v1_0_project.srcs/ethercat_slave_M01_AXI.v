@@ -32,30 +32,30 @@ module mac_rx_v1_0_M00_AXI #
 	output wire  M_AXI_WLAST,// Write last. This signal indicates the last transfer in a write burst.
 	output wire [C_M_AXI_WUSER_WIDTH-1 : 0] M_AXI_WUSER,// Optional User-defined signal in the write data channel.
 	output wire  M_AXI_WVALID,
-	output wire  M_AXI_BREADY,	
+	output wire  M_AXI_BREADY,
 	input wire  M_AXI_WREADY,
 	input wire  M_AXI_AWREADY,
 	input wire  M_AXI_BVALID,
 	
-    input[63:0]dma_rx_data,
-    input[31:0]dma_rx_address,
-    input[10:0]dma_rx_size, //bytes
-    input dma_rx_start,
-    output reg dma_rx_stop,
-    output dma_rx_start_qword
+	input[63:0]dma_rx_data,
+	input[31:0]dma_rx_address,
+	input[10:0]dma_rx_size, //bytes
+	input dma_rx_start,
+	output reg dma_rx_stop,
+	output dma_rx_start_qword
 );
 
-	function integer clogb2 (input integer bit_depth);             
-	begin                                                           
-		for(clogb2=0; bit_depth>0; clogb2=clogb2+1)                   
-			bit_depth = bit_depth >> 1;                                 
-	end   
-	endfunction                                                     
+	function integer clogb2 (input integer bit_depth);
+	begin
+		for(clogb2=0; bit_depth>0; clogb2=clogb2+1)
+			bit_depth = bit_depth >> 1;
+	end
+	endfunction
 
 	parameter [1:0] IDLE = 2'b00,
-                    INIT_WRITE   = 2'b01, 
-                    INIT_COMPARE = 2'b11;
-    reg [1:0] mst_exec_state;
+					INIT_WRITE   = 2'b01, 
+					INIT_COMPARE = 2'b11;
+	reg [1:0] mst_exec_state;
 
 	reg axi_awvalid;
 	reg axi_wlast;
@@ -68,7 +68,7 @@ module mac_rx_v1_0_M00_AXI #
 	wire wnext;
 	wire init_txn_pulse = dma_rx_start;
 
-    wire[10:0] MAX_NUMBER_FRAMES = 0;
+	wire[10:0] MAX_NUMBER_FRAMES = 0;
 
 	assign M_AXI_AWID	= 'b0;
 	assign M_AXI_AWSIZE	= clogb2((C_M_AXI_DATA_WIDTH/8)-1);
@@ -91,66 +91,61 @@ module mac_rx_v1_0_M00_AXI #
 	assign M_AXI_AWADDR	= dma_rx_address;
 	assign M_AXI_WDATA = dma_rx_data;
 	
-  //  assign data0 = {24'h5d5d5d, 3'h0, start_single_burst_write, 2'h0,mst_exec_state};
- //   assign data1 = {21'h0, writes_done2, writes_done1, writes_done, write_index};
-   // assign data2 = {13'h0, burst_write_active, axi_bready, axi_wvalid, 8'h55, NUMBER_QWORDS};
-
-
-	always@(posedge M_AXI_ACLK) begin  
+	always@(posedge M_AXI_ACLK) begin
 		if(!M_AXI_ARESETN) begin
 			mst_exec_state <= IDLE;
-            start_single_burst_write <= 0;
-            writes_done2 <= 0;
-            dma_rx_stop <= 0;
-        end else begin
-            case(mst_exec_state)                                                                               
-                IDLE: begin
+			start_single_burst_write <= 0;
+			writes_done2 <= 0;
+			dma_rx_stop <= 0;
+		end else begin
+			case(mst_exec_state)
+				IDLE: begin
 					start_single_burst_write <= 0;
-                    dma_rx_stop <= 0;                                                                                    
-                    if(init_txn_pulse)
-	                   mst_exec_state  <= INIT_WRITE;
-	            end                                                                                     
-                INIT_WRITE: begin                                                                                       
-	               if(writes_done)       begin                                                                         
-                        writes_done2 <= 1;
-	                   mst_exec_state <= INIT_COMPARE;                                                              
-	               end else
-	                   start_single_burst_write <= (~axi_awvalid && ~start_single_burst_write && ~burst_write_active)? 1 : 0;
-	            end                                                                   
-                INIT_COMPARE: begin                           
-                    dma_rx_stop <= 1; 
-				    start_single_burst_write <= 0;
-                    mst_exec_state <= IDLE;                                                               
-                end                                                                                             
-                default :                                                                                         
-                    mst_exec_state  <= IDLE;                                                              
-            endcase                                                                                             
-        end                                                                                                   
-	end                                                                                
-	                                                                                                            
-	assign wnext = M_AXI_WREADY & axi_wvalid;
-    assign dma_rx_start_qword = wnext;
+					dma_rx_stop <= 0;
+					if(init_txn_pulse)
+						mst_exec_state <= INIT_WRITE;
+				end
+				INIT_WRITE: begin
+					if(writes_done) begin
+						writes_done2 <= 1;
+						mst_exec_state <= INIT_COMPARE;
+					end else
+						start_single_burst_write <= (~axi_awvalid && ~start_single_burst_write && ~burst_write_active)? 1 : 0;
+				end
+				INIT_COMPARE: begin
+					dma_rx_stop <= 1; 
+					start_single_burst_write <= 0;
+					mst_exec_state <= IDLE;
+				end
+				default :
+					mst_exec_state <= IDLE;
+			endcase
+		end
+	end
 
-    always @(posedge M_AXI_ACLK) begin  
-        axi_awvalid	<=	(!M_AXI_ARESETN || init_txn_pulse)? 0 :
-                        (~axi_awvalid && start_single_burst_write)? 1 :
-                        (M_AXI_AWREADY && axi_awvalid)? 0 : axi_awvalid; 
-        axi_wvalid	<=	(!M_AXI_ARESETN || init_txn_pulse)? 0 :
-                        (~axi_wvalid && start_single_burst_write)? 1 :
-                        (wnext && axi_wlast)? 0 : axi_wvalid;
-        axi_wlast	<=	(!M_AXI_ARESETN || init_txn_pulse)? 0 :
-                        ((((write_index == (NUMBER_QWORDS-2)) && (NUMBER_QWORDS >= 2)) && wnext) || (NUMBER_QWORDS == 1 ))? 1 :
-                        (wnext)? 0 :
-                        (axi_wlast && (NUMBER_QWORDS == 1))? 0 : axi_wlast;
-        write_index	<=	(!M_AXI_ARESETN || init_txn_pulse || start_single_burst_write)? 0 :
-                        (wnext && (write_index != (NUMBER_QWORDS-1)))? write_index + 1 : write_index;
-        axi_bready	<=	(!M_AXI_ARESETN || init_txn_pulse)? 0 :
-                        (M_AXI_BVALID && ~axi_bready)? 1 :
-                        (axi_bready)? 0 : axi_bready;
-        burst_write_active	<=	(!M_AXI_ARESETN || init_txn_pulse)? 0 :
-                                (start_single_burst_write)? 1 : 
-                                (M_AXI_BVALID && axi_bready)? 0 : burst_write_active;                                                                                                 
-        writes_done	<=	(!M_AXI_ARESETN || init_txn_pulse)? 0 :	(M_AXI_BVALID && axi_bready)? 1 : writes_done;
-	end                                                                                                       
+	assign wnext = M_AXI_WREADY & axi_wvalid;
+	assign dma_rx_start_qword = wnext;
+
+	always @(posedge M_AXI_ACLK) begin  
+		axi_awvalid	<=	(!M_AXI_ARESETN || init_txn_pulse)? 0 :
+						(~axi_awvalid && start_single_burst_write)? 1 :
+						(M_AXI_AWREADY && axi_awvalid)? 0 : axi_awvalid; 
+		axi_wvalid	<=	(!M_AXI_ARESETN || init_txn_pulse)? 0 :
+						(~axi_wvalid && start_single_burst_write)? 1 :
+						(wnext && axi_wlast)? 0 : axi_wvalid;
+		axi_wlast	<=	(!M_AXI_ARESETN || init_txn_pulse)? 0 :
+						((((write_index == (NUMBER_QWORDS-2)) && (NUMBER_QWORDS >= 2)) && wnext) || (NUMBER_QWORDS == 1 ))? 1 :
+						(wnext)? 0 :
+						(axi_wlast && (NUMBER_QWORDS == 1))? 0 : axi_wlast;
+		write_index	<=	(!M_AXI_ARESETN || init_txn_pulse || start_single_burst_write)? 0 :
+						(wnext && (write_index != (NUMBER_QWORDS-1)))? write_index + 1 : write_index;
+		axi_bready	<=	(!M_AXI_ARESETN || init_txn_pulse)? 0 :
+						(M_AXI_BVALID && ~axi_bready)? 1 :
+						(axi_bready)? 0 : axi_bready;
+		burst_write_active	<=	(!M_AXI_ARESETN || init_txn_pulse)? 0 :
+								(start_single_burst_write)? 1 : 
+								(M_AXI_BVALID && axi_bready)? 0 : burst_write_active;
+		writes_done	<=	(!M_AXI_ARESETN || init_txn_pulse)? 0 :	(M_AXI_BVALID && axi_bready)? 1 : writes_done;
+	end
 
 endmodule

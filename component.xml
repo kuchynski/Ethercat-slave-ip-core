@@ -2,7 +2,7 @@
 <spirit:component xmlns:xilinx="http://www.xilinx.com"
 		xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<spirit:vendor>koenig-pa.de</spirit:vendor>
+	<spirit:vendor>kuchynski</spirit:vendor>
 	<spirit:library>user</spirit:library>
 	<spirit:name>ethercat_slave</spirit:name>
 	<spirit:version>2.0</spirit:version>
@@ -2944,14 +2944,10 @@
 				<xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
 			</xilinx:taxonomies>
 			<xilinx:displayName>ethercat_slave</xilinx:displayName>
-			<xilinx:vendorURL>http://koenig-pa.de</xilinx:vendorURL>
+			<xilinx:vendorURL>kuchynski</xilinx:vendorURL>
 			<xilinx:coreRevision>354</xilinx:coreRevision>
 			<xilinx:coreCreationDateTime>2017-11-28T07:25:18Z</xilinx:coreCreationDateTime>
 			<xilinx:tags>
-				<xilinx:tag xilinx:name="visutechsystem.by:user:mac_tx:1.0_ARCHIVE_LOCATION">D:/work/vivado/ip/mac_tx_1.0</xilinx:tag>
-				<xilinx:tag xilinx:name="koenig-pa.de:user:mac_tx:1.0_ARCHIVE_LOCATION">D:/work/vivado/ip_2.0/mac_tx_2.0</xilinx:tag>
-				<xilinx:tag xilinx:name="koenig-pa.de:user:mac_tx:2.0_ARCHIVE_LOCATION">D:/work/vivado/ip_fm/ethercat_slave</xilinx:tag>
-				<xilinx:tag xilinx:name="koenig-pa.de:user:ethercat_slave:2.0_ARCHIVE_LOCATION">d:/work/vivado/ip_fm/ethercat_slave_v1</xilinx:tag>
 			</xilinx:tags>
 		</xilinx:coreExtensions>
 		<xilinx:packagingInfo>

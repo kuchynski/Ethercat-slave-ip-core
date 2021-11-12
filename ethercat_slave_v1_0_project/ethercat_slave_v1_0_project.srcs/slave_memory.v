@@ -67,86 +67,86 @@ module slave_memory(
 	wire[7:0] mem_data_read_reg =	(mem_address_read[15:0] == 16'h000)? mem_000 :
 									(mem_address_read[15:0] == 16'h004)? mem_004 :
 									(mem_address_read[15:0] == 16'h005)? mem_005 :
-                                    (mem_address_read[15:0] == 16'h006)? mem_006 :
-                                    (mem_address_read[15:0] == 16'h007)? mem_007 :
-                                    (mem_address_read[15:0] == 16'h008)? mem_008 :
-                                    (mem_address_read[15:0] == 16'h00A)? mem_00A :
-                                    (mem_address_read[15:0] == 16'h010)? mem_010 :
-                                    (mem_address_read[15:0] == 16'h011)? mem_011 :
-                                    (mem_address_read[15:0] == 16'h012)? mem_012 :
-                                    (mem_address_read[15:0] == 16'h100)? mem_100 :
-                                    (mem_address_read[15:0] == 16'h101)? mem_101 :
-                                    (mem_address_read[15:0] == 16'h102)? mem_102 :
-                                    (mem_address_read[15:0] == 16'h103)? mem_103 :
-                                    (mem_address_read[15:0] == 16'h110)? mem_110 :
-                                    (mem_address_read[15:0] == 16'h111)? mem_111 :
-                                    (mem_address_read[15:0] == 16'h120)? mem_120 :
-                                    (mem_address_read[15:0] == 16'h121)? mem_121 :
-                                    (mem_address_read[15:0] == 16'h130)? mem_130 :
-                                    (mem_address_read[15:0] == 16'h131)? mem_131 :
-                                    (mem_address_read[15:0] == 16'h134)? mem_134 :
-                                    (mem_address_read[15:0] == 16'h135)? mem_135 :
-                                    (mem_address_read[15:0] == 16'h140)? mem_140 :
-                                    (mem_address_read[15:0] == 16'h141)? mem_141 :
-                                    (mem_address_read[15:0] == 16'h600)? mem_600 :
-                                    (mem_address_read[15:0] == 16'h601)? mem_601 :
-                                    (mem_address_read[15:0] == 16'h602)? mem_602 :
-                                    (mem_address_read[15:0] == 16'h603)? mem_603 :
-                                    (mem_address_read[15:0] == 16'h604)? mem_604 :
-                                    (mem_address_read[15:0] == 16'h605)? mem_605 :
-                                    (mem_address_read[15:0] == 16'h606)? {5'h0, mem_606} :
-                                    (mem_address_read[15:0] == 16'h607)? {5'h0, mem_607} :
-                                    (mem_address_read[15:0] == 16'h608)? mem_608 :
-                                    (mem_address_read[15:0] == 16'h609)? mem_609 :
-                                    (mem_address_read[15:0] == 16'h60A)? {5'h0, mem_60A} :
-                                    (mem_address_read[15:0] == 16'h60B)? {5'h0, mem_60B} :
-                                    (mem_address_read[15:0] == 16'h60C)? {5'h0, mem_60C} :
-                                    (mem_address_read[15:0] == 16'h610)? mem_610 :
-                                    (mem_address_read[15:0] == 16'h611)? mem_611 :
-                                    (mem_address_read[15:0] == 16'h612)? mem_612 :
-                                    (mem_address_read[15:0] == 16'h613)? mem_613 :
-                                    (mem_address_read[15:0] == 16'h614)? mem_614 :
-                                    (mem_address_read[15:0] == 16'h615)? mem_615 :
-                                    (mem_address_read[15:0] == 16'h616)? {5'h0, mem_616} :
-                                    (mem_address_read[15:0] == 16'h617)? {5'h0, mem_617} :
-                                    (mem_address_read[15:0] == 16'h618)? mem_618 :
-                                    (mem_address_read[15:0] == 16'h619)? mem_619 :
-                                    (mem_address_read[15:0] == 16'h61A)? {5'h0, mem_61A} :
-                                    (mem_address_read[15:0] == 16'h61B)? {5'h0, mem_61B} :
-                                    (mem_address_read[15:0] == 16'h61C)? {5'h0, mem_61C} :
-                                    (mem_address_read[15:0] == 16'h620)? mem_620 :
-                                    (mem_address_read[15:0] == 16'h621)? mem_621 :
-                                    (mem_address_read[15:0] == 16'h622)? mem_622 :
-                                    (mem_address_read[15:0] == 16'h623)? mem_623 :
-                                    (mem_address_read[15:0] == 16'h624)? mem_624 :
-                                    (mem_address_read[15:0] == 16'h625)? mem_625 :
-                                    (mem_address_read[15:0] == 16'h626)? {5'h0, mem_626} :
-                                    (mem_address_read[15:0] == 16'h627)? {5'h0, mem_627} :
-                                    (mem_address_read[15:0] == 16'h628)? mem_628 :
-                                    (mem_address_read[15:0] == 16'h629)? mem_629 :
-                                    (mem_address_read[15:0] == 16'h62A)? {5'h0, mem_62A} :
-                                    (mem_address_read[15:0] == 16'h62B)? {5'h0, mem_62B} :
-                                    (mem_address_read[15:0] == 16'h62C)? {5'h0, mem_62C} :
-                                    (mem_address_read[15:0] == 16'h630)? mem_630 :
-                                    (mem_address_read[15:0] == 16'h631)? mem_631 :
-                                    (mem_address_read[15:0] == 16'h632)? mem_632 :
-                                    (mem_address_read[15:0] == 16'h633)? mem_633 :
-                                    (mem_address_read[15:0] == 16'h634)? mem_634 :
-                                    (mem_address_read[15:0] == 16'h635)? mem_635 :
-                                    (mem_address_read[15:0] == 16'h636)? {5'h0, mem_636} :
-                                    (mem_address_read[15:0] == 16'h637)? {5'h0, mem_637} :
-                                    (mem_address_read[15:0] == 16'h638)? mem_638 :
-                                    (mem_address_read[15:0] == 16'h639)? mem_639 :
-                                    (mem_address_read[15:0] == 16'h63A)? {5'h0, mem_63A} :
-                                    (mem_address_read[15:0] == 16'h63B)? {5'h0, mem_63B} :
-                                    (mem_address_read[15:0] == 16'h63C)? {5'h0, mem_63C}: 0;
+									(mem_address_read[15:0] == 16'h006)? mem_006 :
+									(mem_address_read[15:0] == 16'h007)? mem_007 :
+									(mem_address_read[15:0] == 16'h008)? mem_008 :
+									(mem_address_read[15:0] == 16'h00A)? mem_00A :
+									(mem_address_read[15:0] == 16'h010)? mem_010 :
+									(mem_address_read[15:0] == 16'h011)? mem_011 :
+									(mem_address_read[15:0] == 16'h012)? mem_012 :
+									(mem_address_read[15:0] == 16'h100)? mem_100 :
+									(mem_address_read[15:0] == 16'h101)? mem_101 :
+									(mem_address_read[15:0] == 16'h102)? mem_102 :
+									(mem_address_read[15:0] == 16'h103)? mem_103 :
+									(mem_address_read[15:0] == 16'h110)? mem_110 :
+									(mem_address_read[15:0] == 16'h111)? mem_111 :
+									(mem_address_read[15:0] == 16'h120)? mem_120 :
+									(mem_address_read[15:0] == 16'h121)? mem_121 :
+									(mem_address_read[15:0] == 16'h130)? mem_130 :
+									(mem_address_read[15:0] == 16'h131)? mem_131 :
+									(mem_address_read[15:0] == 16'h134)? mem_134 :
+									(mem_address_read[15:0] == 16'h135)? mem_135 :
+									(mem_address_read[15:0] == 16'h140)? mem_140 :
+									(mem_address_read[15:0] == 16'h141)? mem_141 :
+									(mem_address_read[15:0] == 16'h600)? mem_600 :
+									(mem_address_read[15:0] == 16'h601)? mem_601 :
+									(mem_address_read[15:0] == 16'h602)? mem_602 :
+									(mem_address_read[15:0] == 16'h603)? mem_603 :
+									(mem_address_read[15:0] == 16'h604)? mem_604 :
+									(mem_address_read[15:0] == 16'h605)? mem_605 :
+									(mem_address_read[15:0] == 16'h606)? {5'h0, mem_606} :
+									(mem_address_read[15:0] == 16'h607)? {5'h0, mem_607} :
+									(mem_address_read[15:0] == 16'h608)? mem_608 :
+									(mem_address_read[15:0] == 16'h609)? mem_609 :
+									(mem_address_read[15:0] == 16'h60A)? {5'h0, mem_60A} :
+									(mem_address_read[15:0] == 16'h60B)? {5'h0, mem_60B} :
+									(mem_address_read[15:0] == 16'h60C)? {5'h0, mem_60C} :
+									(mem_address_read[15:0] == 16'h610)? mem_610 :
+									(mem_address_read[15:0] == 16'h611)? mem_611 :
+									(mem_address_read[15:0] == 16'h612)? mem_612 :
+									(mem_address_read[15:0] == 16'h613)? mem_613 :
+									(mem_address_read[15:0] == 16'h614)? mem_614 :
+									(mem_address_read[15:0] == 16'h615)? mem_615 :
+									(mem_address_read[15:0] == 16'h616)? {5'h0, mem_616} :
+									(mem_address_read[15:0] == 16'h617)? {5'h0, mem_617} :
+									(mem_address_read[15:0] == 16'h618)? mem_618 :
+									(mem_address_read[15:0] == 16'h619)? mem_619 :
+									(mem_address_read[15:0] == 16'h61A)? {5'h0, mem_61A} :
+									(mem_address_read[15:0] == 16'h61B)? {5'h0, mem_61B} :
+									(mem_address_read[15:0] == 16'h61C)? {5'h0, mem_61C} :
+									(mem_address_read[15:0] == 16'h620)? mem_620 :
+									(mem_address_read[15:0] == 16'h621)? mem_621 :
+									(mem_address_read[15:0] == 16'h622)? mem_622 :
+									(mem_address_read[15:0] == 16'h623)? mem_623 :
+									(mem_address_read[15:0] == 16'h624)? mem_624 :
+									(mem_address_read[15:0] == 16'h625)? mem_625 :
+									(mem_address_read[15:0] == 16'h626)? {5'h0, mem_626} :
+									(mem_address_read[15:0] == 16'h627)? {5'h0, mem_627} :
+									(mem_address_read[15:0] == 16'h628)? mem_628 :
+									(mem_address_read[15:0] == 16'h629)? mem_629 :
+									(mem_address_read[15:0] == 16'h62A)? {5'h0, mem_62A} :
+									(mem_address_read[15:0] == 16'h62B)? {5'h0, mem_62B} :
+									(mem_address_read[15:0] == 16'h62C)? {5'h0, mem_62C} :
+									(mem_address_read[15:0] == 16'h630)? mem_630 :
+									(mem_address_read[15:0] == 16'h631)? mem_631 :
+									(mem_address_read[15:0] == 16'h632)? mem_632 :
+									(mem_address_read[15:0] == 16'h633)? mem_633 :
+									(mem_address_read[15:0] == 16'h634)? mem_634 :
+									(mem_address_read[15:0] == 16'h635)? mem_635 :
+									(mem_address_read[15:0] == 16'h636)? {5'h0, mem_636} :
+									(mem_address_read[15:0] == 16'h637)? {5'h0, mem_637} :
+									(mem_address_read[15:0] == 16'h638)? mem_638 :
+									(mem_address_read[15:0] == 16'h639)? mem_639 :
+									(mem_address_read[15:0] == 16'h63A)? {5'h0, mem_63A} :
+									(mem_address_read[15:0] == 16'h63B)? {5'h0, mem_63B} :
+									(mem_address_read[15:0] == 16'h63C)? {5'h0, mem_63C}: 0;
 
 	assign fp_address = {mem_011, mem_010};
 	assign fmmu0_address = {mem_603, mem_602, mem_601, mem_600};
 	assign fmmu1_address = {mem_613, mem_612, mem_611, mem_610};
 	assign fmmu2_address = {mem_623, mem_622, mem_621, mem_620};
 	assign fmmu3_address = {mem_633, mem_632, mem_631, mem_630};
-   
+
 	assign mem_logical_data_read = (mem_logical_address_read == fmmu2_address)? mem_00A : 0;
 
 	// EEPROM
@@ -207,32 +207,32 @@ module slave_memory(
 					16'h61A: mem_61A <= mem_data_write_bram;
 					16'h61B: mem_61B <= mem_data_write_bram;
 					16'h61C: mem_61C <= mem_data_write_bram;
-                    16'h620: mem_620 <= mem_data_write_bram;
-                    16'h621: mem_621 <= mem_data_write_bram;
-                    16'h622: mem_622 <= mem_data_write_bram;
-                    16'h623: mem_623 <= mem_data_write_bram;
-                    16'h624: mem_624 <= mem_data_write_bram;
-                    16'h625: mem_625 <= mem_data_write_bram;
-                    16'h626: mem_626 <= mem_data_write_bram;
-                    16'h627: mem_627 <= mem_data_write_bram;
-                    16'h628: mem_628 <= mem_data_write_bram;
-                    16'h629: mem_629 <= mem_data_write_bram;
-                    16'h62A: mem_62A <= mem_data_write_bram;
-                    16'h62B: mem_62B <= mem_data_write_bram;
-                    16'h62C: mem_62C <= mem_data_write_bram;
-                    16'h630: mem_630 <= mem_data_write_bram;
-                    16'h631: mem_631 <= mem_data_write_bram;
-                    16'h632: mem_632 <= mem_data_write_bram;
-                    16'h633: mem_633 <= mem_data_write_bram;
-                    16'h634: mem_634 <= mem_data_write_bram;
-                    16'h635: mem_635 <= mem_data_write_bram;
-                    16'h636: mem_636 <= mem_data_write_bram;
-                    16'h637: mem_637 <= mem_data_write_bram;
-                    16'h638: mem_638 <= mem_data_write_bram;
-                    16'h639: mem_639 <= mem_data_write_bram;
-                    16'h63A: mem_63A <= mem_data_write_bram;
-                    16'h63B: mem_63B <= mem_data_write_bram;
-                    16'h63C: mem_63C <= mem_data_write_bram;
+					16'h620: mem_620 <= mem_data_write_bram;
+					16'h621: mem_621 <= mem_data_write_bram;
+					16'h622: mem_622 <= mem_data_write_bram;
+					16'h623: mem_623 <= mem_data_write_bram;
+					16'h624: mem_624 <= mem_data_write_bram;
+					16'h625: mem_625 <= mem_data_write_bram;
+					16'h626: mem_626 <= mem_data_write_bram;
+					16'h627: mem_627 <= mem_data_write_bram;
+					16'h628: mem_628 <= mem_data_write_bram;
+					16'h629: mem_629 <= mem_data_write_bram;
+					16'h62A: mem_62A <= mem_data_write_bram;
+					16'h62B: mem_62B <= mem_data_write_bram;
+					16'h62C: mem_62C <= mem_data_write_bram;
+					16'h630: mem_630 <= mem_data_write_bram;
+					16'h631: mem_631 <= mem_data_write_bram;
+					16'h632: mem_632 <= mem_data_write_bram;
+					16'h633: mem_633 <= mem_data_write_bram;
+					16'h634: mem_634 <= mem_data_write_bram;
+					16'h635: mem_635 <= mem_data_write_bram;
+					16'h636: mem_636 <= mem_data_write_bram;
+					16'h637: mem_637 <= mem_data_write_bram;
+					16'h638: mem_638 <= mem_data_write_bram;
+					16'h639: mem_639 <= mem_data_write_bram;
+					16'h63A: mem_63A <= mem_data_write_bram;
+					16'h63B: mem_63B <= mem_data_write_bram;
+					16'h63C: mem_63C <= mem_data_write_bram;
 				endcase
 			end
 		end
@@ -279,13 +279,13 @@ module slave_memory(
 		if(!rst_n) begin
 			st_read_eeprom <= 1;
 		end else begin
-			case(st_read_eeprom)                
+			case(st_read_eeprom)
 				0: begin
 					EEPROM_ADDRESS_st <= 0;
 					if(mem_write_en_bram == 1 && mem_address_write_bram[15:0] == 16'h504)
 						st_read_eeprom <= 1;
 				end
-				1: st_read_eeprom <= 2;                
+				1: st_read_eeprom <= 2;
 				2: begin
 					if(EEPROM_ADDRESS_st == 0) mem_508 <= EEPROM_DATA;
 					if(EEPROM_ADDRESS_st == 1) mem_509 <= EEPROM_DATA;
@@ -301,25 +301,25 @@ module slave_memory(
 			endcase
 		end
 	end
-    
+
 	BRAM_SDP_MACRO #(.BRAM_SIZE("18Kb"), .DEVICE("7SERIES"), .WRITE_WIDTH(8), .READ_WIDTH(8),
-        .INIT_00(256'h0000000000000007026281110000077700C700000000009F000004008C000C08),
-        .INIT_01(256'h0000000000000000020012000200100002001200020010000000000000000000)
+		.INIT_00(256'h0000000000000007026281110000077700C700000000009F000004008C000C08),
+		.INIT_01(256'h0000000000000000020012000200100002001200020010000000000000000000)
 	) //2 KByte
-    BRAM_EEPROM(
-        .DI(0),
-        .WE(1'h0),
-        .WRADDR(EEPROM_ADDRESS + EEPROM_ADDRESS_st),
-        .WRCLK(clk_25),
-        .WREN(0),
-        .DO(EEPROM_DATA),
-        .RDADDR(EEPROM_ADDRESS + EEPROM_ADDRESS_st),
-        .RDCLK(clk_25),
-        .RDEN(1), .REGCE(0), .RST(0)
-        );
-        
-        
-        
+	BRAM_EEPROM(
+		.DI(0),
+		.WE(1'h0),
+		.WRADDR(EEPROM_ADDRESS + EEPROM_ADDRESS_st),
+		.WRCLK(clk_25),
+		.WREN(0),
+		.DO(EEPROM_DATA),
+		.RDADDR(EEPROM_ADDRESS + EEPROM_ADDRESS_st),
+		.RDCLK(clk_25),
+		.RDEN(1), .REGCE(0), .RST(0)
+		);
+
+
+
 	wire[31:0] mem_address_write_bram = (mem_logical_write_en)? mem_logical_address_write : mem_address_write;
 	wire mem_write_en_bram = mem_write_en;
 	wire mem_logical_write_en_bram = mem_logical_write_en;
@@ -343,9 +343,9 @@ module slave_memory(
 			mem_logical_write_en_bram <= 0;
 			st_bram_write <= 0;
 		end else begin
-			case(st_bram_write)                
+			case(st_bram_write)
 				0: begin
-					bram_write_address_r <= 0;                    
+					bram_write_address_r <= 0;
 					if(mem_write_en || mem_logical_write_en) begin
 						bram_write_address_w <= bram_write_address_w + 1;
 						if(!bram_write_address_w)
@@ -365,7 +365,7 @@ module slave_memory(
 					end else begin
 						mem_write_en_bram <= 0;
 						mem_logical_write_en_bram <= 0;
-						bram_write_address_w <= 0;                
+						bram_write_address_w <= 0;
 						st_bram_write <= 0;
 					end
 				end
