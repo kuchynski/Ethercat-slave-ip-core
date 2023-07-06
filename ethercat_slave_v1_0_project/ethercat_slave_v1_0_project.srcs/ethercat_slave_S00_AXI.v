@@ -1,7 +1,7 @@
 module ethercat_slave_v1_0_S00_AXI #
 (
-	parameter integer C_S_AXI_DATA_WIDTH	= 32,// Width of S_AXI data bus
-	parameter integer C_S_AXI_ADDR_WIDTH	= 8// Width of S_AXI address bus
+	parameter integer C_S_AXI_DATA_WIDTH	= 32,
+	parameter integer C_S_AXI_ADDR_WIDTH	= 8
 )
 (
 	output reg[5:0] CHANGE_SLV_REG_NUMBER_WRITE,
@@ -9,10 +9,10 @@ module ethercat_slave_v1_0_S00_AXI #
 	output reg CHANGE_SLV_REG_EVENT_WRITE,
 	output CHANGE_SLV_REG_EVENT_READ,
 	output reg[C_S_AXI_DATA_WIDTH-1:0] SLV_REG0,
-	output reg[C_S_AXI_DATA_WIDTH-1:0] SLV_REG1, // timeout
-	output reg[C_S_AXI_DATA_WIDTH-1:0] SLV_REG2, // irq mask
-	output reg[C_S_AXI_DATA_WIDTH-1:0] SLV_REG3, // SHIFT
-	output reg[C_S_AXI_DATA_WIDTH-1:0] SLV_REG4, // CYCLE_BYTES
+	output reg[C_S_AXI_DATA_WIDTH-1:0] SLV_REG1,
+	output reg[C_S_AXI_DATA_WIDTH-1:0] SLV_REG2,
+	output reg[C_S_AXI_DATA_WIDTH-1:0] SLV_REG3,
+	output reg[C_S_AXI_DATA_WIDTH-1:0] SLV_REG4,
 	output reg[C_S_AXI_DATA_WIDTH-1:0] SLV_REG5,
 	output reg[C_S_AXI_DATA_WIDTH-1:0] SLV_REG6,
 	output reg[C_S_AXI_DATA_WIDTH-1:0] SLV_REG7,
@@ -29,24 +29,24 @@ module ethercat_slave_v1_0_S00_AXI #
 	input wire[C_S_AXI_DATA_WIDTH-1:0] MST_REG6,
 	input wire[C_S_AXI_DATA_WIDTH-1:0] IRQ_DATA,
 
-	input wire  S_AXI_ACLK,// Global Clock Signal
-	input wire  S_AXI_ARESETN,// Global Reset Signal. This Signal is Active LOW
-	input wire [C_S_AXI_ADDR_WIDTH-1 : 0] S_AXI_AWADDR,// Write address (issued by master, acceped by Slave)
+	input wire  S_AXI_ACLK,
+	input wire  S_AXI_ARESETN,
+	input wire [C_S_AXI_ADDR_WIDTH-1 : 0] S_AXI_AWADDR,
 	input wire [2 : 0] S_AXI_AWPROT,
 	input wire  S_AXI_AWVALID,
 	output wire  S_AXI_AWREADY,
-	input wire [C_S_AXI_DATA_WIDTH-1 : 0] S_AXI_WDATA,// Write data (issued by master, acceped by Slave)
+	input wire [C_S_AXI_DATA_WIDTH-1 : 0] S_AXI_WDATA,
 	input wire [(C_S_AXI_DATA_WIDTH/8)-1 : 0] S_AXI_WSTRB,
 	input wire  S_AXI_WVALID,
 	output wire  S_AXI_WREADY,
 	output wire [1 : 0] S_AXI_BRESP,
 	output wire  S_AXI_BVALID,
 	input wire  S_AXI_BREADY,
-	input wire [C_S_AXI_ADDR_WIDTH-1 : 0] S_AXI_ARADDR,// Read address (issued by master, acceped by Slave)
+	input wire [C_S_AXI_ADDR_WIDTH-1 : 0] S_AXI_ARADDR,
 	input wire [2 : 0] S_AXI_ARPROT,
 	input wire  S_AXI_ARVALID,
 	output wire  S_AXI_ARREADY,
-	output wire [C_S_AXI_DATA_WIDTH-1 : 0] S_AXI_RDATA,// Read data (issued by slave)
+	output wire [C_S_AXI_DATA_WIDTH-1 : 0] S_AXI_RDATA,
 	output wire [1 : 0] S_AXI_RRESP,
 	output wire  S_AXI_RVALID,
 	input wire  S_AXI_RREADY

@@ -1,3 +1,9 @@
+//
+// ethercat slave ip core
+// copyright Andrei Kuchynski
+// kuchynskiandrei@gmail.com
+//
+
 `timescale 1ns / 1ps
 
 module mac_connect(

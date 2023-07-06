@@ -1,36 +1,36 @@
 module mac_rx_v1_0_M00_AXI #
 ( 
-	parameter  C_M_TARGET_SLAVE_BASE_ADDR	= 32'h40000000,// Base address of targeted slave
-	parameter integer C_M_AXI_BURST_LEN	= 256,// Burst Length. Supports 1, 2, 4, 8, 16, 32, 64, 128, 256 burst lengths
-	parameter integer C_M_AXI_ID_WIDTH	= 1,// Thread ID Width
-	parameter integer C_M_AXI_ADDR_WIDTH	= 32,// Width of Address Bus
-	parameter integer C_M_AXI_DATA_WIDTH	= 64,// Width of Data Bus
-	parameter integer C_M_AXI_AWUSER_WIDTH	= 1,// Width of User Write Address Bus
-	parameter integer C_M_AXI_WUSER_WIDTH	= 8// Width of User Write Data Bus
+	parameter  C_M_TARGET_SLAVE_BASE_ADDR	= 32'h40000000,
+	parameter integer C_M_AXI_BURST_LEN	= 256,
+	parameter integer C_M_AXI_ID_WIDTH	= 1,
+	parameter integer C_M_AXI_ADDR_WIDTH	= 32,
+	parameter integer C_M_AXI_DATA_WIDTH	= 64,
+	parameter integer C_M_AXI_AWUSER_WIDTH	= 1,
+	parameter integer C_M_AXI_WUSER_WIDTH	= 8
 ) 
 (
 	output wire[31:0] data0,
 	output wire[31:0] data1,
 	output wire[31:0] data2,
 		
-	input wire  M_AXI_ACLK,// Global Clock Signal.
-	input wire  M_AXI_ARESETN,// Global Reset Singal. This Signal is Active Low
+	input wire  M_AXI_ACLK,
+	input wire  M_AXI_ARESETN,
 	
-	output wire [C_M_AXI_ID_WIDTH-1 : 0] M_AXI_AWID,// Master Interface Write Address ID
-	output wire [C_M_AXI_ADDR_WIDTH-1 : 0] M_AXI_AWADDR,// Master Interface Write Address
-	output wire [7 : 0] M_AXI_AWLEN,// Burst length. The burst length gives the exact number of transfers in a burst
-	output wire [2 : 0] M_AXI_AWSIZE,// Burst size. This signal indicates the size of each transfer in the burst
+	output wire [C_M_AXI_ID_WIDTH-1 : 0] M_AXI_AWID,
+	output wire [C_M_AXI_ADDR_WIDTH-1 : 0] M_AXI_AWADDR,
+	output wire [7 : 0] M_AXI_AWLEN,
+	output wire [2 : 0] M_AXI_AWSIZE,
 	output wire [1 : 0] M_AXI_AWBURST,
 	output wire  M_AXI_AWLOCK,
 	output wire [3 : 0] M_AXI_AWCACHE,
 	output wire [2 : 0] M_AXI_AWPROT,
-	output wire [3 : 0] M_AXI_AWQOS,// Quality of Service, QoS identifier sent for each write transaction.
+	output wire [3 : 0] M_AXI_AWQOS,
 	output wire [C_M_AXI_AWUSER_WIDTH-1 : 0] M_AXI_AWUSER,
 	output wire  M_AXI_AWVALID,
-	output wire [C_M_AXI_DATA_WIDTH-1 : 0] M_AXI_WDATA,// Master Interface Write Data.
+	output wire [C_M_AXI_DATA_WIDTH-1 : 0] M_AXI_WDATA,
 	output wire [C_M_AXI_DATA_WIDTH/8-1 : 0] M_AXI_WSTRB,
-	output wire  M_AXI_WLAST,// Write last. This signal indicates the last transfer in a write burst.
-	output wire [C_M_AXI_WUSER_WIDTH-1 : 0] M_AXI_WUSER,// Optional User-defined signal in the write data channel.
+	output wire  M_AXI_WLAST,
+	output wire [C_M_AXI_WUSER_WIDTH-1 : 0] M_AXI_WUSER,
 	output wire  M_AXI_WVALID,
 	output wire  M_AXI_BREADY,
 	input wire  M_AXI_WREADY,

@@ -1,3 +1,8 @@
+//
+// ethercat slave ip core
+// kuchynskiandrei@gmail.com
+//
+
 `timescale 1ns / 1ps
 module cpu_ethercat_slave #(
 )(

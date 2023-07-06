@@ -1,3 +1,9 @@
+//
+// ethercat slave ip core
+// copyright Andrei Kuchynski
+// kuchynskiandrei@gmail.com
+//
+
 module ethercat_slave_v1_0 #(
 	// Parameters of Axi Slave Bus Interface S00_AXI
 	parameter integer C_S00_AXI_DATA_WIDTH	= 32,

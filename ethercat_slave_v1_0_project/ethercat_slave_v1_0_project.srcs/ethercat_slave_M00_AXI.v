@@ -1,35 +1,35 @@
 module mac_tx_v1_0_M00_AXI #
 ( 
-	parameter  C_M_TARGET_SLAVE_BASE_ADDR	= 32'h40000000,// Base address of targeted slave
-	parameter integer C_M_AXI_BURST_LEN	= 256,// Burst Length. Supports 1, 2, 4, 8, 16, 32, 64, 128, 256 burst lengths
-	parameter integer C_M_AXI_ID_WIDTH	= 1,// Thread ID Width
-	parameter integer C_M_AXI_ADDR_WIDTH	= 32,// Width of Address Bus
-	parameter integer C_M_AXI_DATA_WIDTH	= 64,// Width of Data Bus
-	parameter integer C_M_AXI_ARUSER_WIDTH	= 1// Width of User Read Address Bus
+	parameter  C_M_TARGET_SLAVE_BASE_ADDR	= 32'h40000000,
+	parameter integer C_M_AXI_BURST_LEN	= 256,
+	parameter integer C_M_AXI_ID_WIDTH	= 1,
+	parameter integer C_M_AXI_ADDR_WIDTH	= 32,
+	parameter integer C_M_AXI_DATA_WIDTH	= 64,
+	parameter integer C_M_AXI_ARUSER_WIDTH	= 1
 )
 (
 	output wire[31:0] data0,
 	output wire[31:0] data1,
 	output wire[31:0] data2,
 		
-	input wire  M_AXI_ACLK,// Global Clock Signal.
-	input wire  M_AXI_ARESETN,// Global Reset Singal. This Signal is Active Low
+	input wire  M_AXI_ACLK,
+	input wire  M_AXI_ARESETN,
 
-	output wire [C_M_AXI_ID_WIDTH-1 : 0] M_AXI_ARID,// Master Interface Read Address.
-	output wire [7 : 0] M_AXI_ARLEN,// Burst length. The burst length gives the exact number of transfers in a burst
-	output wire [2 : 0] M_AXI_ARSIZE,// Burst size. This signal indicates the size of each transfer in the burst
+	output wire [C_M_AXI_ID_WIDTH-1 : 0] M_AXI_ARID,
+	output wire [7 : 0] M_AXI_ARLEN,
+	output wire [2 : 0] M_AXI_ARSIZE,
 	output wire [1 : 0] M_AXI_ARBURST,
 	output wire  M_AXI_ARLOCK,
 	output wire [C_M_AXI_ADDR_WIDTH-1 : 0] M_AXI_ARADDR,
 	output wire [3 : 0] M_AXI_ARCACHE,
 	output wire [2 : 0] M_AXI_ARPROT,
-	output wire [3 : 0] M_AXI_ARQOS,// Quality of Service, QoS identifier sent for each read transaction
-	output wire [C_M_AXI_ARUSER_WIDTH-1 : 0] M_AXI_ARUSER,// Optional User-defined signal in the read address channel.
+	output wire [3 : 0] M_AXI_ARQOS,
+	output wire [C_M_AXI_ARUSER_WIDTH-1 : 0] M_AXI_ARUSER,
 	output wire  M_AXI_ARVALID,
 	output wire  M_AXI_RREADY,	
 	input wire  M_AXI_ARREADY,
-	input wire [C_M_AXI_DATA_WIDTH-1 : 0] M_AXI_RDATA,// Master Read Data
-	input wire  M_AXI_RLAST,// Read last. This signal indicates the last transfer in a read burst
+	input wire [C_M_AXI_DATA_WIDTH-1 : 0] M_AXI_RDATA,
+	input wire  M_AXI_RLAST,
 	input wire  M_AXI_RVALID,
 
 	output[63:0]dma_tx_data,
